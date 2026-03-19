@@ -1,4 +1,4 @@
-import { DefineComponent } from "vue";
+import { App, DefineComponent } from "vue";
 import type { CountryCode, PhoneNumber } from "libphonenumber-js";
 
 export interface DropdownOptions {
@@ -277,11 +277,18 @@ export interface VueTelInputEmits {
     [key: string]: (...args: any[]) => void;
 }
 
-declare const VueTelInput: DefineComponent<VueTelInputProps, {}, {}, {}, {}, {}, {}, VueTelInputEmits> & {
-    install: (app: any, options?: any) => void;
-};
+declare const VueTelInput: DefineComponent<VueTelInputProps, {}, {}, {}, {}, {}, {}, VueTelInputEmits>;
 
-export default VueTelInput;
+export type VueTelInputPluginOptions = Omit<VueTelInputProps, "modelValue">;
+
+export interface VueTelInputPlugin {
+    install: (app: App, options?: VueTelInputPluginOptions) => void;
+}
+
+declare const plugin: VueTelInputPlugin;
+
+export { VueTelInput };
+export default plugin;
 
 declare module "@vue/runtime-core" {
     interface GlobalComponents {
