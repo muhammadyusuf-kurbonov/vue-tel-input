@@ -271,6 +271,17 @@ describe('Props', () => {
         expect(wrapper.find('.vti__input').attributes('maxlength')).toBe('20');
       })
     });
+    it('.inputmode sets `inputmode` native attribute of input', () => {
+      const wrapper = shallowMount(VueTelInput, {
+        props: {
+          inputOptions: { inputmode: 'tel' },
+        },
+      });
+
+      wrapper.vm.$nextTick(() => {
+        expect(wrapper.find('.vti__input').attributes('inputmode')).toBe('tel');
+      })
+    });
     it('.name sets `name` native attribute of input', () => {
       const wrapper = shallowMount(VueTelInput, {
         props: {

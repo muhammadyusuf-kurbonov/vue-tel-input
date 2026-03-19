@@ -185,6 +185,13 @@ export const allProps = [
     inDemo: false,
   },
   {
+    name: 'inputOptions.inputmode',
+    default: undefined,
+    type: String,
+    description: 'Native input <code>inputmode</code> attribute',
+    inDemo: false,
+  },
+  {
     name: 'inputOptions.maxlength',
     default: 25,
     type: Number,

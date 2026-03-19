@@ -44,6 +44,16 @@ export interface DropdownOptions {
     tabindex?: number;
 }
 
+export type InputMode =
+    | "none"
+    | "text"
+    | "tel"
+    | "url"
+    | "email"
+    | "numeric"
+    | "decimal"
+    | "search";
+
 export interface InputOptions {
     /**
      * Native input autocomplete attribute
@@ -65,6 +75,11 @@ export interface InputOptions {
      * @default ''
      */
     id?: string;
+    /**
+     * Native input inputmode attribute
+     * @default undefined
+     */
+    inputmode?: InputMode;
     /**
      * Native input maxlength attribute
      * @default 25

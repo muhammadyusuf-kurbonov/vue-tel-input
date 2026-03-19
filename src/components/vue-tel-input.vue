@@ -61,6 +61,7 @@
            :type="inputOptions.type"
            :autocomplete="inputOptions.autocomplete"
            :autofocus="inputOptions.autofocus"
+           :inputmode="inputOptions.inputmode"
            :class="['vti__input', 'vti__phone', inputOptions.styleClasses]"
            :disabled="disabled"
            :id="inputOptions.id"
